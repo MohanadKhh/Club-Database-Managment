@@ -1,0 +1,16 @@
+INSERT INTO academy (Academy_ID, Name, Academy_Type, Balance, Rank, Monthly_Subscription, National_ID_Trainer) VALUES 
+(1, 'Football Academy', 'Football', 10000, 50, 200, 302030002),
+(2, 'Tennis Academy', 'Tennis', 15000, 70, 250, 302030004),
+(3, 'Basketball Academy', 'Basketball', 12000, 100, 220, 302030006),
+(4, 'Swimming Academy', 'Swimming', 13000, 120, 230, 302030007),
+(5, 'Gym Academy', 'Gym', 11000, 40, 210, 302030008),
+(6, 'Fitness Academy', 'Fitness', 14000, 80, 240, 302030010),
+(7, 'Volleyball Academy', 'Volleyball', 12500, 110, 225, 302030013),
+(8, 'Squash Academy', 'Squash', 16000, 130, 270, 302030015),
+(9, 'Athletics Academy', 'Athletics', 11500, 20, 215, 302030002),
+(10, 'Badminton Academy', 'Badminton', 14500, 60, 235, 302030004),
+(11, 'Table Tennis Academy', 'Table Tennis', 13500, 90, 255, 302030006),
+(12, 'Karate Academy', 'Karate', 10500, 30, 195, 302030007),
+(13, 'Yoga Academy', 'Yoga', 15500, 140, 265, 302030008),
+(14, 'Boxing Academy', 'Boxing', 16500, 150, 275, 302030010),
+(15, 'Martial Arts Academy', 'Martial Arts', 17000, 10, 280, 302030013);
