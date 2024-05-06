@@ -1,0 +1,35 @@
+INSERT INTO person VALUES 
+("Mohanad","Hassan","Gamal Abd El Naser","01093382358",4,10,2002,"302030016","Male","member"),
+("Kiro","George","Obour","01015847574",15,4,2002,"302030017","Male","member"),
+("Mohamed","Hamid","Naser City","01223456789",5,12,2002,"302030018","Male","member"),
+("Annas","Hamed","Maady","01044382358",1,8,2001,"302030019","Male","member"),
+("Ahmed","Helmy","Hlwan","01156682358",4,1,1994,"302030020","Male","member"),
+("Youssef","Hazem","Naser City","01056482358",28,7,2002,"302030021","Male","member"),
+("Mariam","Abd El Galeil","Madinety","01088382358",18,8,1980,"302030022","Female","member"),
+("Yassen","EL masry","New Cairo","01280401239",30,9,2002,"302030023","Male","member"),
+("Sara","Ryad","Shorouk","01299401239",5,6,1999,"302030024","Female","member"),
+("Mona","saed","New Cairo","01280401239",30,9,2002,"302030025","Female","member"),
+("Hassan","ramy","Gamal Abd El Naser","01093382358",4,10,1969,"302030026","Male","member"),
+("Mina","George","Obour","01015847574",5,4,2002,"302030027","Male","member"),
+("Lama","Hamid","Naser City","01223456789",5,12,2005,"302030028","Female","member"),
+("Nada","saad","Hlwan","01156682358",4,1,2000,"302030029","Female","member"),
+("Hana","Abdo","El Salam","01056482358",8,7,2002,"302030030","Female","member");
+
+
+
+INSERT INTO person VALUES 
+("sara","karim","El Obour","01011125601",1,4,2002,"302030001","Female","employee"),
+("Noha","Hassan","El Marg","01091282358",2,4,2002,"302030002","Female","employee"),
+("Farida","Ashraf","New Cairo","01011125665",3,3,2003,"302030003","Female","employee"),
+("Mariam","Ahmed","New Cairo","01052382358",4,3,2003,"302030004","Female","employee"),
+("Amina","Khalil","New Cairo","01093389358",5,5,2005,"302030005","Female","employee"),
+("Mariam","Mohamed","El Marg","01269338358",6,5,2005,"302030006","Female","employee"),
+("Amira","Hassan","Nasr City","01093382488",7,6,2001,"302030007","Female","employee"),
+("Mohanad","Ahmed","El Obour","01093032358",8,6,2001,"302030008","Male","employee"),
+("Aly","Mohamed","Nasr City","01093365358",9,7,2000,"302030009","Male","employee"),
+("Galal","Karim","El Obour","01074382358",10,7,2000,"302030010","Male","employee"),
+("Abdallah","Omar","El Marg","01093384658",11,10,2000,"302030011","Male","employee"),
+("Karim","Abdelrahman","Nasr City","01097082358",12,10,1999,"302030012","Male","employee"),
+("Zeyad","Galal","Maady","01093062358",13,1,1999,"302030013","Male","employee"),
+("Ashraf","Gharib","Helwan","01093082358",14,1,1998,"302030014","Male","employee"),
+("Mohamed","Abdallah","Maady","01093380358",15,2,1998,"302030015","Male","employee");
