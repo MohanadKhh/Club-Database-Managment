@@ -49,17 +49,10 @@ CREATE TABLE Affiliate_Member
   FOREIGN KEY (National_ID) REFERENCES Member(National_ID)
 );
 
-CREATE TABLE SECURITY_MAN
-(
-  National_ID INT NOT NULL,
-  PRIMARY KEY (National_ID),
-  FOREIGN KEY (National_ID) REFERENCES Employee(National_ID)
-);
-
 CREATE TABLE Manager
 (
   National_ID INT NOT NULL,
-  Managming_Departement VARCHAR(20) NOT NULL,
+  Managing_Departement VARCHAR(20) NOT NULL,
   PRIMARY KEY (National_ID),
   FOREIGN KEY (National_ID) REFERENCES Employee(National_ID)
 );
