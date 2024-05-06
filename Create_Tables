@@ -66,6 +66,7 @@ CREATE TABLE Manager
 CREATE TABLE Trainer
 (
   National_ID INT NOT NULL,
+  Level INT NOT NULL,
   PRIMARY KEY (National_ID),
   FOREIGN KEY (National_ID) REFERENCES Employee(National_ID)
 );
