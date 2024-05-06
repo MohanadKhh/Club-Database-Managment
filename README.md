@@ -1,6 +1,6 @@
 # Club-Database-Managment
 
-1) AGE IN affiliate member should be driven
+1) AGE in affiliate member entity should be driven
 2) Entertainment type on Entertainment entity
 3) Service type in services entity
 4) Security entity -> deleted
@@ -16,5 +16,3 @@
       );
 
 7) Updated most of data types of attributes from of int to varchar
-
-![image](https://github.com/MohanadKhh/Club-Database-Managment-System/assets/127995481/5cd49f10-cca4-4616-9ac0-f1cb1f4c1098)
