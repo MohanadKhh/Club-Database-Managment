@@ -1,0 +1,8 @@
+INSERT INTO manager (National_ID, Managing_Departement) VALUES 
+(302030001, "Finance"),
+(302030003, "Marketing"),
+(302030005, "Human Resources"),
+(302030009, "Operations"),
+(302030011, "Facilities"),
+(302030012, "Membership"),
+(302030014, "Events");
