@@ -85,9 +85,9 @@ CREATE TABLE Academy
   Balance INT NOT NULL,
   Rank INT NOT NULL,
   Monthly_Subscription INT NOT NULL,
-  National_ID INT NOT NULL,
+  National_ID_Trainer INT NOT NULL,
   PRIMARY KEY (Academy_ID),
-  FOREIGN KEY (National_ID) REFERENCES Trainer(National_ID)
+  FOREIGN KEY (National_ID_Trainer) REFERENCES Trainer(National_ID)
 );
 
 CREATE TABLE Facilities
