@@ -1,0 +1,37 @@
+INSERT INTO AFFILIATE_MEMBER (Name, Day, Month, BD_Year, Relation, National_ID) 
+VALUES 
+("Sahar", 10, 5, 2000, "Sister", 302030016),
+("Ali", 15, 3, 2001, "Brother", 302030016),
+("Ahmed", 20, 1, 2002, "Son", 302030016),
+("Fatima", 25, 9, 2003, "Daughter", 302030016),
+("Lina", 3, 6, 1984, "Wife", 302030016),
+
+("Omar", 6, 7, 2000, "Sister", 302030017),
+("Nour", 9, 8, 2001, "Brother", 302030017),
+("Youssef", 12, 11, 2002, "Son", 302030017),
+("Laila", 15, 10, 2003, "Daughter", 302030017),
+("Mohammed", 18, 4, 1994, "Husband", 302030017),
+
+("Maya", 21, 2, 2000, "Sister", 302030018),
+("Ahmad", 24, 3, 2001, "Brother", 302030018),
+("Hassan", 27, 5, 2002, "Son", 302030018),
+("Aya", 30, 8, 2003, "Daughter", 302030018),
+("Nada", 2, 1, 1995, "Wife", 302030018),
+
+("Khalid", 5, 12, 2000, "Sister", 302030019),
+("Salma", 8, 11, 2001, "Brother", 302030019),
+("Yara", 11, 10, 2002, "Son", 302030019),
+("Hussein", 14, 9, 2003, "Daughter", 302030019),
+("Fatemah", 17, 6, 1991, "Husband", 302030019),
+
+("Reem", 20, 5, 2000, "Sister", 302030020),
+("Aisha", 23, 4, 2001, "Brother", 302030020),
+("Mahmoud", 26, 3, 2002, "Son", 302030020),
+("Zainab", 29, 2, 2003, "Daughter", 302030020),
+("Yousef", 1, 1, 1996, "Wife", 302030020),
+
+("Dana", 4, 8, 2000, "Sister", 302030021),
+("Hala", 7, 7, 2001, "Brother", 302030021),
+("Bassam", 10, 9, 2002, "Son", 302030021),
+("Lama", 13, 6, 2003, "Daughter", 302030021),
+("Fahad", 16, 5, 1990, "Husband", 302030021);
