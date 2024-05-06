@@ -59,6 +59,7 @@ CREATE TABLE SECURITY_MAN
 CREATE TABLE Manager
 (
   National_ID INT NOT NULL,
+  Managming_Departement VARCHAR(20) NOT NULL,
   PRIMARY KEY (National_ID),
   FOREIGN KEY (National_ID) REFERENCES Employee(National_ID)
 );
