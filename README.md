@@ -1,5 +1,7 @@
 # Club-Database-Managment
 
+
+## All erroe and falses of system:
 1) AGE in affiliate member entity should be driven
 2) Entertainment type on Entertainment entity
 3) Service type in services entity
