@@ -179,7 +179,7 @@ CREATE TABLE Works_at
   FOREIGN KEY (Location_ID) REFERENCES Facilities(Location_ID)
 );
 
-CREATE TABLE Use
+CREATE TABLE Uses
 (
   National_ID CHAR(14) NOT NULL,
   Location_ID INT NOT NULL,
