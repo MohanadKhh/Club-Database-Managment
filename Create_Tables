@@ -1,25 +1,25 @@
 CREATE TABLE Person
 (
+  National_ID CHAR(14) NOT NULL,
   First_Name VARCHAR(20) NOT NULL,
   Last_Name VARCHAR(20) NOT NULL,
   Address VARCHAR(100) NOT NULL,
-  Phone_Number INT NOT NULL,
-  Day INT NOT NULL,
-  Month INT NOT NULL,
+  Phone_Number CHAR(11) NOT NULL,
+  BD_Day INT NOT NULL,
+  BD_Month INT NOT NULL,
   BD_Year INT NOT NULL,
-  National_ID INT NOT NULL,
-  Gender VARCHAR(15) NOT NULL,
+  Gender CHAR(1) NOT NULL,
   Type VARCHAR(15) NOT NULL,
   PRIMARY KEY (National_ID)
 );
 
 CREATE TABLE Member
 (
+  National_ID CHAR(14) NOT NULL,
   Membership_start_year INT NOT NULL,
-  Membership_ID INT NOT NULL,
+  Membership_ID VARCHAR(20) NOT NULL,
   Number_of_Affiliate_Member INT NOT NULL,
   Number_of_Invitation INT NOT NULL,
-  National_ID INT NOT NULL,
   PRIMARY KEY (National_ID),
   FOREIGN KEY (National_ID) REFERENCES Person(National_ID),
   UNIQUE (Membership_ID)
@@ -27,11 +27,12 @@ CREATE TABLE Member
 
 CREATE TABLE Employee
 (
-  SSN INT NOT NULL,
+  National_ID CHAR(14) NOT NULL,
+  SSN VARCHAR(20) NOT NULL, 
   Salary INT NOT NULL,
   Years_of_experience INT NOT NULL,
   Job_Type VARCHAR(15) NOT NULL,
-  National_ID INT NOT NULL,
+  Working_Hours INT NOT NULL,
   PRIMARY KEY (National_ID),
   FOREIGN KEY (National_ID) REFERENCES Person(National_ID),
   UNIQUE (SSN)
@@ -39,35 +40,21 @@ CREATE TABLE Employee
 
 CREATE TABLE Affiliate_Member
 (
+  National_ID CHAR(14) NOT NULL,
   Name VARCHAR(20) NOT NULL,
-  Day INT NOT NULL,
-  Month INT NOT NULL,
+  BD_Day INT NOT NULL,
+  BD_Month INT NOT NULL,
   BD_Year INT NOT NULL,
   Relation VARCHAR(20)  NOT NULL,
-  National_ID INT NOT NULL,
+  Age INT NOT NULL,
   PRIMARY KEY (Name, National_ID),
   FOREIGN KEY (National_ID) REFERENCES Member(National_ID)
 );
 
 CREATE TABLE Manager
 (
-  National_ID INT NOT NULL,
+  National_ID CHAR(14) NOT NULL,
   Managing_Departement VARCHAR(20) NOT NULL,
-  PRIMARY KEY (National_ID),
-  FOREIGN KEY (National_ID) REFERENCES Employee(National_ID)
-);
-
-CREATE TABLE Trainer
-(
-  National_ID INT NOT NULL,
-  Level INT NOT NULL,
-  PRIMARY KEY (National_ID),
-  FOREIGN KEY (National_ID) REFERENCES Employee(National_ID)
-);
-
-CREATE TABLE Officer
-(
-  National_ID INT NOT NULL,
   PRIMARY KEY (National_ID),
   FOREIGN KEY (National_ID) REFERENCES Employee(National_ID)
 );
@@ -80,24 +67,34 @@ CREATE TABLE Academy
   Balance INT NOT NULL,
   Rank INT NOT NULL,
   Monthly_Subscription INT NOT NULL,
-  National_ID_Trainer INT NOT NULL,
-  PRIMARY KEY (Academy_ID),
-  FOREIGN KEY (National_ID_Trainer) REFERENCES Trainer(National_ID)
+  PRIMARY KEY (Academy_ID)
 );
+
+
+CREATE TABLE Trainer
+(
+  National_ID CHAR(14) NOT NULL,
+  Level VARCHAR(20) NOT NULL,
+  Academy_ID INT NOT NULL,
+  PRIMARY KEY (National_ID),
+  FOREIGN KEY (National_ID) REFERENCES Employee(National_ID),
+  FOREIGN KEY (Academy_ID) REFERENCES Academy(Academy_ID)
+);
+
 
 CREATE TABLE Facilities
 (
   Location_ID INT NOT NULL,
   Facility_Type VARCHAR(20) NOT NULL,
-  Name VARCHAR(20) NOT NULL,
+  Facility_Name VARCHAR(20) NOT NULL,
   Capacity INT NOT NULL,
   PRIMARY KEY (Location_ID)
 );
 
 CREATE TABLE Services
 (
-  Working_Hours INT NOT NULL,
   Location_ID INT NOT NULL,
+  Working_Hours INT NOT NULL,
   Services_Type VARCHAR(20) NOT NULL ,
   PRIMARY KEY (Location_ID),
   FOREIGN KEY (Location_ID) REFERENCES Facilities(Location_ID)
@@ -105,10 +102,10 @@ CREATE TABLE Services
 
 CREATE TABLE Entertainment
 (
-  Area INT NOT NULL,
-  Entertainment_Type VARCHAR(20) NOT NULL ,
   Location_ID INT NOT NULL,
   Academy_ID INT NOT NULL,
+  Area INT NOT NULL,
+  Entertainment_Type VARCHAR(20) NOT NULL ,
   PRIMARY KEY (Location_ID),
   FOREIGN KEY (Location_ID) REFERENCES Facilities(Location_ID),
   FOREIGN KEY (Academy_ID) REFERENCES Academy(Academy_ID)
@@ -116,9 +113,9 @@ CREATE TABLE Entertainment
 
 CREATE TABLE Changing_Room
 (
-  Number_of_lockers INT NOT NULL,
-  Gender VARCHAR(20) NOT NULL,
   Location_ID INT NOT NULL,
+  Number_of_lockers INT NOT NULL,
+  Gender CHAR(1) NOT NULL,
   PRIMARY KEY (Location_ID),
   FOREIGN KEY (Location_ID) REFERENCES Services(Location_ID)
 );
@@ -132,59 +129,59 @@ CREATE TABLE Clinic
 
 CREATE TABLE Restaurant
 (
-  Revenue INT NOT NULL,
   Location_ID INT NOT NULL,
+  Revenue INT NOT NULL,
   PRIMARY KEY (Location_ID),
   FOREIGN KEY (Location_ID) REFERENCES Services(Location_ID)
 );
 
 CREATE TABLE Courts
 (
-  Type INT NOT NULL,
   Location_ID INT NOT NULL,
+  Type VARCHAR(20) NOT NULL,
   PRIMARY KEY (Location_ID),
   FOREIGN KEY (Location_ID) REFERENCES Entertainment(Location_ID)
 );
 
 CREATE TABLE Kids_Area
 (
-  Number_of_swings INT NOT NULL,
   Location_ID INT NOT NULL,
+  Number_of_swings INT NOT NULL,
   PRIMARY KEY (Location_ID),
   FOREIGN KEY (Location_ID) REFERENCES Entertainment(Location_ID)
 );
 
 CREATE TABLE GYM
 (
-  Number_of_machines INT NOT NULL,
-  Gender VARCHAR(20) NOT NULL,
   Location_ID INT NOT NULL,
+  Number_of_machines INT NOT NULL,
+  Gender CHAR(1) NOT NULL,
   PRIMARY KEY (Location_ID),
   FOREIGN KEY (Location_ID) REFERENCES Entertainment(Location_ID)
 );
 
 CREATE TABLE Swimming_Pool
 (
+  Location_ID INT NOT NULL,
   Start_Time INT NOT NULL,
   End_Time INT NOT NULL,
   Type VARCHAR(20) NOT NULL,
-  Location_ID INT NOT NULL,
   PRIMARY KEY (Location_ID),
   FOREIGN KEY (Location_ID) REFERENCES Entertainment(Location_ID)
 );
 
 CREATE TABLE Works_at
 (
-  National_ID INT NOT NULL,
-  Academy_ID INT NOT NULL,
-  PRIMARY KEY (National_ID, Academy_ID),
+  National_ID CHAR(14) NOT NULL,
+  Location_ID INT NOT NULL,
+  PRIMARY KEY (National_ID, Location_ID),
   FOREIGN KEY (National_ID) REFERENCES Employee(National_ID),
-  FOREIGN KEY (Academy_ID) REFERENCES Academy(Academy_ID)
+  FOREIGN KEY (Location_ID) REFERENCES Facilities(Location_ID)
 );
 
-CREATE TABLE USES
+CREATE TABLE Use
 (
-  National_ID INT NOT NULL,
+  National_ID CHAR(14) NOT NULL,
   Location_ID INT NOT NULL,
   PRIMARY KEY (National_ID, Location_ID),
   FOREIGN KEY (National_ID) REFERENCES Member(National_ID),
@@ -194,7 +191,7 @@ CREATE TABLE USES
 CREATE TABLE Joins
 (
   Academy_ID INT NOT NULL,
-  National_ID INT NOT NULL,
+  National_ID CHAR(14) NOT NULL,
   PRIMARY KEY (Academy_ID, National_ID),
   FOREIGN KEY (Academy_ID) REFERENCES Academy(Academy_ID),
   FOREIGN KEY (National_ID) REFERENCES Member(National_ID)
@@ -218,17 +215,17 @@ CREATE TABLE Clinic_Medicine
 
 CREATE TABLE Courts_Available_Slots
 (
-  Available_Slots INT NOT NULL,
+  Available_Slots VARCHAR(20) NOT NULL,
   Location_ID INT NOT NULL,
   PRIMARY KEY (Available_Slots, Location_ID),
   FOREIGN KEY (Location_ID) REFERENCES Courts(Location_ID)
 );
 
-CREATE TABLE Academy_Days(
+CREATE TABLE Days(
     Academy_ID INT NOT NULL,
     DAY VARCHAR(10),
-    Start_hr TIME NOT NULL,
-    End_hr TIME NOT NULL,
+    Start_Hour TIME NOT NULL,
+    End_Hour TIME NOT NULL,
     PRIMARY KEY(Academy_ID, DAY),
     FOREIGN KEY(Academy_ID) REFERENCES academy(Academy_ID)
 );
